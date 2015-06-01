@@ -1,13 +1,13 @@
-nginx:
-  build: ./nginx
-  links:
-    - gin:gin
-  ports:
-    - "80:80"
-
 gin:
   build: ./gin
   volumes:
     - "gin:/src/gin"
   ports:
     - "9000"
+
+nginx:
+  build: ./nginx
+  links:
+    - gin:gin
+  ports:
+    - "80:80"
