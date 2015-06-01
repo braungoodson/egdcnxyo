@@ -1,0 +1,8 @@
+server {
+  listen 80;
+  server_name gin;
+  access_log /var/log/nginx/gin.access.log;
+  location / {
+    proxy_pass http://localhost:9000
+  }
+}
